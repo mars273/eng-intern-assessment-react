@@ -37,3 +37,7 @@ div#lap-records{
 .hide{
     display: none;
 }
+.control-panel-container button{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Zilla Slab', serif;
+}
