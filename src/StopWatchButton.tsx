@@ -35,6 +35,7 @@ var hours = 0;
 var lap = 0;
 var lapInfo: lapData[] = [];
 var lapActive = false;
+var stopActive = false;
 
 export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWatchButtonProps) {
     
@@ -49,6 +50,12 @@ export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWa
             if(!lapActive){
                 document.getElementById('lap-btn').classList.remove('hide');
             }
+
+            if(stopActive){
+                stopActive = false;
+                var stopBtn = document.getElementById('stop-btn') as HTMLButtonElement
+                stopBtn.disabled = false;
+            }
         }
     }
 
@@ -60,6 +67,10 @@ export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWa
         lapActive = false;
         // Hiding the lap button
         document.getElementById('lap-btn').classList.add('hide');
+
+        var stopBtn = document.getElementById('stop-btn') as HTMLButtonElement
+        stopBtn.disabled = true;
+        stopActive = true;
     }
 
     // This function calculates the time and updates the stopwatch
