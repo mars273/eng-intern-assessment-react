@@ -1,0 +1,39 @@
+#main-container {
+    display: flex;
+    padding: 10%;
+    justify-content: center;
+}
+body , .title{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Zilla Slab', serif;
+    font-weight: 100;
+    text-align: center;
+}
+.container{
+    text-align: center;
+}
+#stopwatch-container{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: xxx-large;
+    text-align: center;
+    font-weight: 800;
+}
+div#lap-records{
+    margin-top: 15%;
+}
+.record-info{
+    display: flex;
+    justify-content: space-around;
+}
+.action-btns{
+    margin: 1%;
+    padding: 4% 10%;
+    border: none;
+    color: white;
+    background: black;
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
