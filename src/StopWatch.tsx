@@ -41,7 +41,7 @@ export default function StopWatch() {
     const [resetValue, setResetValue] = useState({resetVal: false});
 
 
-    const updStopwatch = (info : stopwatchInfo) => {
+    const updateStopwatch = (info : stopwatchInfo) => {
         setStopwatchInfo(info);
     }
 
@@ -68,7 +68,7 @@ export default function StopWatch() {
                 {String(stopwatchInfo.seconds).padStart(2, '0')}
             </div>
 
-            <StopWatchButton updStopwatch={updStopwatch} makeLap={makeLap} reset={reset}/>
+            <StopWatchButton updateStopwatch={updateStopwatch} makeLap={makeLap} reset={reset}/>
 
             <div id='lap-records'>
                {lapInfo.map((info, key) => {

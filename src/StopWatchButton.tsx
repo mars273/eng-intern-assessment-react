@@ -9,7 +9,7 @@ import React from 'react'
 
 // Interface for the props 
 interface StopWatchButtonProps {
-    updStopwatch: (newInfo: { hours: number; minutes: number; seconds: number }) => void;
+    updateStopwatch: (newInfo: { hours: number; minutes: number; seconds: number }) => void;
     makeLap: (lapsInfo: {}) => void;
     reset: (info: {resetVal: boolean}) => void;
 }
@@ -37,7 +37,7 @@ var lapInfo: lapData[] = [];
 var lapActive = false;
 var stopActive = false;
 
-export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWatchButtonProps) {
+export default function StopWatchButton({ updateStopwatch, makeLap, reset} : StopWatchButtonProps) {
     
     // This function will start the stopwatch
     const startStopwatch = () => {
@@ -68,7 +68,7 @@ export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWa
         // Hiding the lap button
         document.getElementById('lap-btn').classList.add('hide');
 
-        var stopBtn = document.getElementById('stop-btn') as HTMLButtonElement
+        var stopBtn = document.getElementById('stop-btn') as HTMLButtonElement;
         stopBtn.disabled = true;
         stopActive = true;
     }
@@ -84,7 +84,7 @@ export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWa
         hours = Math.floor(passedTime / 3600000);
 
         // Updating the stopwatch
-        updStopwatch({hours, minutes, seconds});
+        updateStopwatch({hours, minutes, seconds});
     }
 
     
@@ -99,7 +99,7 @@ export default function StopWatchButton({ updStopwatch, makeLap, reset} : StopWa
         passedTime = 0;
         pausedTime = 0;
         // Updating the stopwatch
-        updStopwatch({hours, minutes, seconds});
+        updateStopwatch({hours, minutes, seconds});
         
         // Emptying the lap array
         lapInfo = [];
